@@ -21,7 +21,7 @@ public class Main {
         Book b8= new Book("Vad ska jag äta, egentligen","Dietista Metabolica", 1,true);
 
 
-        java.util.ArrayList<Book> books = new ArrayList<>();
+        ArrayList<Book> books = new ArrayList<>(); //tog bort java.utils
         books.add(b1);
         books.add(b2);
         books.add(b3);
@@ -43,17 +43,20 @@ public class Main {
             sc.nextLine();
 
             if (val == 1){
+                
+                //Nya grejer i listan hamnar alltid i listans sista plats så man kan nå dem med lista.size()-1 inuti lista.get(). 
+                //Man behöver således inte ange nya variabelnamn
 
-                System.out.println("What book do you want to add please insert title:");
-                String title = sc.nextLine();
-                System.out.println("please insert author:");
-                String author = sc.nextLine();
-                System.out.println("please insert editoin:");
-                int edition  = sc.nextInt();
-               Book b9 = new Book(title,author,edition); // men här behöver jag nåt som kreera en ny b (i++) så att jag kan addera mer o mer
-                // for loop utanför ???
-               books.add(b9);
-                System.out.print(b9);
+                books.add(new Book("","","",""));
+                System.out.println("Insert book title:");
+                books.get(books.size()-1).title = sc.nextLine();
+                System.out.println("Insert book author:");
+                books.get(books.size()-1).author = sc.nextLine();
+                System.out.println("Insert publishing year:");
+                books.get(books.size()-1).year = sc.nextLine();
+                System.out.println("Insert publisher details:");
+                books.get(books.size()-1).edition = sc.nextLine();
+                
             } else if ( val ==2) { System.out.println("What's the title of the book you are searching for?");
                     String searchedTitle = sc.nextLine();
 
