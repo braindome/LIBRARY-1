@@ -4,15 +4,15 @@ public class Book {
 
     String title;
     String author;
-    int edition;
+    String edition;                     //ändrat till String så man kan ta emot stad, publisher och år
     boolean available;
 
-    public Book(String title,String author, int edition, boolean available){
+    public Book(String title,String author, String edition, boolean available){
 
-        this.title =title;
+        this.title = title;             //la till blanksteg
         this.author = author;
         this.edition = edition;
-        this.available= available;
+        this.available = available;     //la till blanksteg
 
     }
 
@@ -28,11 +28,11 @@ public class Book {
                     " Author: " + this.author+"\n"+
                     " Editon: "+ this.edition+"\n" ;
         }
-        public Book (String title,String author, int edition)  {
+        /*public Book (String title,String author, int edition)  {
         this.title =title;
         this.author = author;
         this.edition = edition;
-        this.available= true;
+        this.available= true;*/                         //ny konstruktör? den ligger iaf inuti setAvailable, bör vara ute
 
 }
 
